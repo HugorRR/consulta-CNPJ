@@ -1,5 +1,7 @@
 # 🏢 Consulta CNPJ 
 
+# Acesse o site: https://consulta-cnpj-brasil.streamlit.app
+
 ## 📋 Descrição do Projeto
 
 Uma aplicação web desenvolvida em Streamlit para consulta de informações de empresas brasileiras através do CNPJ.
