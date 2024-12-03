@@ -5,10 +5,8 @@ import re
 from io import BytesIO
 
 def validar_cnpj(cnpj):
-    # Remove caracteres não numéricos
     cnpj = re.sub(r'\D', '', cnpj)
     
-    # Verifica se o CNPJ tem 14 dígitos
     if len(cnpj) != 14:
         st.error("CNPJ inválido. Deve conter 14 dígitos.")
         return False
@@ -21,7 +19,7 @@ def consulta_CNPJ(cnpj):
 
     try:
         response = requests.get(url, headers=headers)
-        response.raise_for_status()  # Lança uma exceção para códigos de erro HTTP
+        response.raise_for_status()
         return response.json()
     except requests.exceptions.RequestException as e:
         st.error(f"Erro na consulta: {e}")
@@ -143,13 +141,11 @@ def pagina_doacoes():
     with col2:
         st.sidebar.subheader("Doação em Criptomoedas")
         
-        # Bitcoin
         st.sidebar.write("**Bitcoin (BTC)**")
         btc_address = "1KnmyxZMv4qgTCqu6PNFA2oQ5i1WwQwcu"
         st.sidebar.image(r"qrcode.png", width=50)
         st.sidebar.code(btc_address)
         
-        # Ethereum
         st.sidebar.write("**Ethereum (ETH) ERC20**")
         eth_address = "0x489bb9936151473b995e289fc68defc967e788b2"
         st.sidebar.code(eth_address)
