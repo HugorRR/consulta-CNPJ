@@ -150,6 +150,9 @@ def pagina_doacoes():
         eth_address = "0x489bb9936151473b995e289fc68defc967e788b2"
         st.sidebar.code(eth_address)
 
+        access_count = update_access_counter()
+        st.sidebar.markdown(f"👥 Número de acessos: {access_count}")
+        
 def main():
     pagina_doacoes()
 
