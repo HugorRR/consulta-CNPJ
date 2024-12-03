@@ -128,6 +128,20 @@ if st.button("Consultar"):
                 st.error(f"Ocorreu um erro: {str(e)}")
     else:
         st.warning("Por favor, digite um CNPJ.")
+        
+def update_access_counter():
+    try:
+        with open('access_counter.txt', 'r') as f:
+            count = int(f.read())
+    except FileNotFoundError:
+        count = 0
+
+    count += 1
+
+    with open('access_counter.txt', 'w') as f:
+        f.write(str(count))
+
+    return count
 
 def pagina_doacoes():
     st.sidebar.header("Apoie este Projeto")
