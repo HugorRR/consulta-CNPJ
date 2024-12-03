@@ -146,7 +146,7 @@ def pagina_doacoes():
         # Bitcoin
         st.sidebar.write("**Bitcoin (BTC)**")
         btc_address = "1KnmyxZMv4qgTCqu6PNFA2oQ5i1WwQwcu"
-        st.sidebar.image(r"G:\Drives compartilhados\BANCO DE DADOS T.I\Automacoes\Consulta-CNPJ\qrcode.png", width=50)
+        st.sidebar.image(r"qrcode.png", width=50)
         st.sidebar.code(btc_address)
         
         # Ethereum
